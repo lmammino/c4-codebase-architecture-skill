@@ -1,0 +1,26 @@
+{
+  "name": "@lmammino/c4-codebase-architecture-skill",
+  "version": "0.1.0",
+  "description": "Agent skill for documenting codebases with the C4 model",
+  "license": "MIT",
+  "type": "module",
+  "files": [
+    "skills"
+  ],
+  "keywords": [
+    "agent-skill",
+    "c4",
+    "architecture",
+    "documentation",
+    "c4-model",
+    "reverse-engineering"
+  ],
+  "agents": {
+    "skills": [
+      {
+        "name": "c4-codebase-architecture",
+        "path": "./skills/c4-codebase-architecture"
+      }
+    ]
+  }
+}
