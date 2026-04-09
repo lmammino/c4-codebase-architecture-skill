@@ -1,6 +1,6 @@
 {
   "name": "@lmammino/c4-codebase-architecture-skill",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Agent skill for documenting codebases with the C4 model",
   "repository": {
     "type": "git",
