@@ -14,6 +14,24 @@ This skill helps an AI coding agent inspect a repository and produce [C4 model](
 
 ## Installation
 
+### Install from npm
+
+```bash
+# npm
+npx skills install npm:@lmammino/c4-codebase-architecture-skill --skill c4-codebase-architecture
+
+# pnpm
+pnpm dlx skills install npm:@lmammino/c4-codebase-architecture-skill --skill c4-codebase-architecture
+
+# yarn (Berry / modern Yarn)
+yarn dlx skills install npm:@lmammino/c4-codebase-architecture-skill --skill c4-codebase-architecture
+
+# bun
+bunx skills install npm:@lmammino/c4-codebase-architecture-skill --skill c4-codebase-architecture
+```
+
+Add `-a <agent>` if you want to target a specific agent explicitly. Otherwise, `skills` will prompt you to choose one.
+
 ### Install from GitHub
 
 ```bash
@@ -29,8 +47,6 @@ yarn dlx skills add lmammino/c4-codebase-architecture-skill --skill c4-codebase-
 # bun
 bunx skills add lmammino/c4-codebase-architecture-skill --skill c4-codebase-architecture
 ```
-
-Add `-a <agent>` if you want to target a specific agent explicitly. Otherwise, `skills` will prompt you to choose one.
 
 ### Install from a local checkout
 
@@ -73,7 +89,7 @@ bun add -g skills
 Then install the skill with:
 
 ```bash
-skills add lmammino/c4-codebase-architecture-skill --skill c4-codebase-architecture
+skills install npm:@lmammino/c4-codebase-architecture-skill --skill c4-codebase-architecture
 ```
 
 ## Manual installation
