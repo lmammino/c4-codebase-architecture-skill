@@ -14,40 +14,81 @@ This skill helps an AI coding agent inspect a repository and produce [C4 model](
 
 ## Installation
 
-Install the package as a development dependency:
+### Install from GitHub
 
 ```bash
-npm install -D @lmammino/c4-codebase-architecture-skill
+# npm
+npx skills add lmammino/c4-codebase-architecture-skill --skill c4-codebase-architecture
+
+# pnpm
+pnpm dlx skills add lmammino/c4-codebase-architecture-skill --skill c4-codebase-architecture
+
+# yarn (Berry / modern Yarn)
+yarn dlx skills add lmammino/c4-codebase-architecture-skill --skill c4-codebase-architecture
+
+# bun
+bunx skills add lmammino/c4-codebase-architecture-skill --skill c4-codebase-architecture
 ```
 
-Then export the skill for your agent of choice:
+Add `-a <agent>` if you want to target a specific agent explicitly. Otherwise, `skills` will prompt you to choose one.
+
+### Install from a local checkout
+
+If you already cloned this repository:
 
 ```bash
-# List available skills
-npx agents list
+# npm
+npx skills add . --skill c4-codebase-architecture
 
-# Export for GitHub Copilot
-npx agents export --target copilot
+# pnpm
+pnpm dlx skills add . --skill c4-codebase-architecture
 
-# Export for Claude
-npx agents export --target claude
+# yarn (Berry / modern Yarn)
+yarn dlx skills add . --skill c4-codebase-architecture
+
+# bun
+bunx skills add . --skill c4-codebase-architecture
 ```
 
-The skill will be installed into the appropriate location for your agent (e.g. `.github/skills/`, `.claude/skills/`).
+Add `-g` to install globally instead of into the current project, or `-y` for a non-interactive install.
+
+### Install the `skills` CLI globally
+
+If you want a persistent `skills` command instead of `npx`/`dlx`/`bunx`:
+
+```bash
+# npm
+npm install -g skills
+
+# pnpm
+pnpm add -g skills
+
+# yarn (classic)
+yarn global add skills
+
+# bun
+bun add -g skills
+```
+
+Then install the skill with:
+
+```bash
+skills add lmammino/c4-codebase-architecture-skill --skill c4-codebase-architecture
+```
 
 ## Manual installation
 
-You can also copy the skill directly into your project without npm:
+You can also copy the skill directory directly into your project without using the CLI:
 
 ```bash
-# For GitHub Copilot
-cp -r skills/c4-codebase-architecture .github/skills/
+# Agents that use .agents/skills
+cp -r skills/c4-codebase-architecture .agents/skills/
 
-# For Claude
+# Claude Code
 cp -r skills/c4-codebase-architecture .claude/skills/
 
-# For any agent
-cp -r skills/c4-codebase-architecture .agents/skills/
+# GitHub Copilot
+cp -r skills/c4-codebase-architecture .github/skills/
 ```
 
 ## Usage

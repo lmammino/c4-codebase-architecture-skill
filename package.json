@@ -2,8 +2,19 @@
   "name": "@lmammino/c4-codebase-architecture-skill",
   "version": "0.1.0",
   "description": "Agent skill for documenting codebases with the C4 model",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lmammino/c4-codebase-architecture-skill.git"
+  },
+  "homepage": "https://github.com/lmammino/c4-codebase-architecture-skill#readme",
+  "bugs": {
+    "url": "https://github.com/lmammino/c4-codebase-architecture-skill/issues"
+  },
   "license": "MIT",
   "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "skills"
   ],

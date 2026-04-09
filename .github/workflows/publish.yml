@@ -1,0 +1,38 @@
+name: Publish to npm
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: npm
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+
+      - name: Verify release tag matches package.json version
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+        run: |
+          PKG_VERSION=$(node -p "require('./package.json').version")
+          RELEASE_TAG="${RELEASE_TAG#v}"
+          test "$PKG_VERSION" = "$RELEASE_TAG"
+
+      - name: Preview package contents
+        run: npm pack --dry-run
+
+      - name: Publish package
+        run: npm publish
